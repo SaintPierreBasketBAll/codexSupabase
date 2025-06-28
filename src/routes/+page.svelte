@@ -32,8 +32,10 @@
   }
 
   h1, h2 {
+
     background: linear-gradient(to right, #ffd27f, #ff8c00);
     background-clip: text;
+main
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0;
