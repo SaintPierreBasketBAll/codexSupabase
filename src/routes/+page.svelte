@@ -1,7 +1,30 @@
-<script>
-  let licence = '';
+<script lang="ts">
+  let nom: string = '';
+  let prenom: string = '';
+  let dateNaissance: string = '';
+  let sections: string[] = [];
+  let sexe: string[] = [];
+  let motif: string = '';
+
+  const sectionsList = [
+    'U6',
+    'U7',
+    'U8',
+    'U9',
+    'U10',
+    'U11',
+    'U12',
+    'U13',
+    'U14',
+    'U15',
+    'U16',
+    'U17',
+    'U18',
+    'Séniors'
+  ];
+
   const handleSubmit = () => {
-    alert(`Licence saisie : ${licence}`);
+    alert(`Nom: ${nom}\nPrénom: ${prenom}\nDate de naissance: ${dateNaissance}\nSections: ${sections.join(', ')}\nSexe: ${sexe.join(', ')}\nMotif: ${motif}`);
   };
 </script>
 
@@ -9,8 +32,41 @@
   <h1>Basket Club</h1>
   <h2>Formulaire d'inscription</h2>
   <form on:submit|preventDefault={handleSubmit}>
-    <label for="licence">Licence du joueur</label>
-    <input id="licence" bind:value={licence} placeholder="Entrez la licence" />
+    <label for="nom">Nom</label>
+    <input id="nom" bind:value={nom} placeholder="Entrez le nom" />
+
+    <label for="prenom">Prénom</label>
+    <input id="prenom" bind:value={prenom} placeholder="Entrez le prénom" />
+
+    <label for="dateNaissance">Date de naissance</label>
+    <input type="date" id="dateNaissance" bind:value={dateNaissance} />
+
+    <fieldset>
+      <legend>Section</legend>
+      {#each sectionsList as sec}
+        <label>
+          <input type="checkbox" value={sec} bind:group={sections} /> {sec}
+        </label>
+      {/each}
+    </fieldset>
+
+    <fieldset>
+      <legend>Sexe</legend>
+      <label>
+        <input type="checkbox" value="Masculin" bind:group={sexe} /> Masculin
+      </label>
+      <label>
+        <input type="checkbox" value="Féminin" bind:group={sexe} /> Féminin
+      </label>
+    </fieldset>
+
+    <label for="motif">Motif de demande de licence</label>
+    <select id="motif" bind:value={motif}>
+      <option value="Renouvellement">Renouvellement</option>
+      <option value="Nouvelle inscription">Nouvelle inscription</option>
+      <option value="Mutation">Mutation</option>
+    </select>
+
     <button type="submit">Valider</button>
   </form>
 </main>
@@ -31,11 +87,10 @@
     gap: 1rem;
   }
 
-  h1, h2 {
-
-    background: linear-gradient(to right, #ffd27f, #ff8c00);
+  h1,
+  h2 {
+    background: linear-gradient(to right, #ffff00, #ffa500, #ff0000);
     background-clip: text;
-main
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0;
@@ -61,6 +116,23 @@ main
     border: 1px solid #555;
     padding: 0.5rem;
     border-radius: 0.25rem;
+  }
+
+  select {
+    background: #444;
+    color: #ccc;
+    border: 1px solid #555;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
   }
 
   button {
