@@ -89,11 +89,20 @@
 
   h1,
   h2 {
-    background: linear-gradient(to right, #ffff00, #ffa500, #ff0000);
+    background: linear-gradient(to right, rgb(246, 173, 63), rgb(213, 128, 1), rgb(190, 66, 0));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
   }
 
   form {
@@ -103,7 +112,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    width: 250px;
+    width: 40rem;
   }
 
   label {
