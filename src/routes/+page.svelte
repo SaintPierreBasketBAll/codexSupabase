@@ -89,7 +89,7 @@
 
   h1,
   h2 {
-    background: linear-gradient(to right, #ffff00, #ffa500, #ff0000);
+    background: linear-gradient(to right, #ffcc80, #ff8c00, #ff6600);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
