@@ -1,30 +1,32 @@
 <script lang="ts">
-  let nom: string = '';
-  let prenom: string = '';
-  let dateNaissance: string = '';
+  let nom: string = "";
+  let prenom: string = "";
+  let dateNaissance: string = "";
   let sections: string[] = [];
   let sexe: string[] = [];
-  let motif: string = '';
+  let motif: string = "";
 
   const sectionsList = [
-    'U6',
-    'U7',
-    'U8',
-    'U9',
-    'U10',
-    'U11',
-    'U12',
-    'U13',
-    'U14',
-    'U15',
-    'U16',
-    'U17',
-    'U18',
-    'Séniors'
+    "U6",
+    "U7",
+    "U8",
+    "U9",
+    "U10",
+    "U11",
+    "U12",
+    "U13",
+    "U14",
+    "U15",
+    "U16",
+    "U17",
+    "U18",
+    "Séniors",
   ];
 
   const handleSubmit = () => {
-    alert(`Nom: ${nom}\nPrénom: ${prenom}\nDate de naissance: ${dateNaissance}\nSections: ${sections.join(', ')}\nSexe: ${sexe.join(', ')}\nMotif: ${motif}`);
+    alert(
+      `Nom: ${nom}\nPrénom: ${prenom}\nDate de naissance: ${dateNaissance}\nSections: ${sections.join(", ")}\nSexe: ${sexe.join(", ")}\nMotif: ${motif}`,
+    );
   };
 </script>
 
@@ -45,7 +47,8 @@
       <legend>Section</legend>
       {#each sectionsList as sec}
         <label>
-          <input type="checkbox" value={sec} bind:group={sections} /> {sec}
+          <input type="checkbox" value={sec} bind:group={sections} />
+          {sec}
         </label>
       {/each}
     </fieldset>
@@ -75,6 +78,9 @@
   :global(body) {
     margin: 0;
     background: #000;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
   }
 
   main {
@@ -89,13 +95,18 @@
 
   h1,
   h2 {
-    background: linear-gradient(to right, rgb(246, 173, 63), rgb(213, 128, 1), rgb(190, 66, 0));
+    background: linear-gradient(
+      to right,
+      rgb(246, 173, 63),
+      rgb(213, 128, 1),
+      rgb(190, 66, 0)
+    );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0;
-    font-family: 'Bebas Neue', sans-serif;
-
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 1px;
   }
 
   h1 {
