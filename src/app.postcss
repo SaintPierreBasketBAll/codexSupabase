@@ -1,0 +1,65 @@
+@import '$lib/styles/utilities.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  /* Visual identity tokens */
+  --color-anthracite: #1F1F1F;
+  --color-yellow: #FFD600;
+  --color-white: #FFFFFF;
+  --color-light-gray: #E0E0E0;
+
+  --shadow-soft: 0 8px 30px rgba(0,0,0,0.08);
+  --shadow-header: 0 2px 10px rgba(0,0,0,0.25);
+
+  /* Breakpoints */
+  --breakpoint-sm: 40rem;   /* 640px */
+  --breakpoint-md: 48rem;   /* 768px */
+  --breakpoint-lg: 64rem;   /* 1024px */
+  --breakpoint-xl: 80rem;   /* 1280px */
+}
+
+/* CSS reset tweaks and base variables */
+:root {
+  --bg: #1F1F1F;
+  --text: #FFFFFF;
+  --muted: #E0E0E0;
+  --brand: #FFD600; /* industrial yellow */
+}
+
+html, body, #svelte { height: 100%; }
+
+body {
+  background-color: var(--color-anthracite);
+  color: #fff;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', ui-sans-serif, system-ui;
+}
+
+h1,h2,h3,h4,h5,h6 { text-transform: uppercase; letter-spacing: 0.04em; font-family: 'Poppins', ui-sans-serif, system-ui; }
+
+html, body { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 84px; }
+
+.container-page { margin-left: auto; margin-right: auto; max-width: 1400px; padding-left: 6%; padding-right: 6%; }
+@media (min-width: 64rem) { .container-page { padding-left: 8%; padding-right: 8%; } }
+
+.btn-primary { display: inline-flex; align-items: center; justify-content: center; border-radius: 0.375rem; color: var(--color-anthracite); font-weight: 600; padding: 0.75rem 1.25rem; box-shadow: var(--shadow-soft); outline: none; background: linear-gradient(90deg, #FFD600, #FFC400); transition: transform 250ms ease-in-out, filter 250ms ease-in-out; }
+.btn-primary:hover { transform: scale(1.05); filter: brightness(1.02); }
+
+.btn-secondary { display: inline-flex; align-items: center; justify-content: center; border-radius: 0.375rem; border: 1px solid rgba(255,255,255,0.2); color: #fff; font-weight: 500; padding: 0.75rem 1.25rem; transition: background-color 200ms; }
+.btn-secondary:hover { background-color: rgba(255,255,255,0.1); }
+
+.card { border-radius: 0.75rem; background: rgba(255,255,255,0.05); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.1); box-shadow: var(--shadow-soft); }
+
+.section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+@media (min-width: 40rem) { .section { padding-top: 5rem; padding-bottom: 5rem; } }
+
+.title-xl { font-weight: 800; letter-spacing: -0.01em; font-size: 1.875rem; }
+@media (min-width: 40rem) { .title-xl { font-size: 2.25rem; } }
+
+.subtitle { color: rgba(255,255,255,0.7); }

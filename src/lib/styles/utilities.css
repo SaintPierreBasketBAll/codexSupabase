@@ -1,0 +1,15 @@
+/* Additional utilities layered on top of Tailwind */
+.text-balance {
+  text-wrap: balance;
+}
+
+.fade-border {
+  position: relative;
+}
+.fade-border::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -1px; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+}
+
